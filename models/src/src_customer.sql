@@ -1,4 +1,4 @@
-{% do log("Criacao do SRC_CUSTOMER", info=True)%}
+{% do log("Criacao do SRC_CUSTOMER", info=True) %}
 
 select
     c_custkey,
@@ -9,6 +9,7 @@ select
     c_acctbal,
     c_mktsegment,
     c_comment
-from {{ source('snowflake_sample', 'raw_customer') }}
+from
+    {{ source("snowflake_sample", "raw_customer") }}
 
-{% do log("Criacao do SRC_CUSTOMER concluida", info=True)%}
+    {% do log("Criacao do SRC_CUSTOMER concluida", info=True) %}
